@@ -929,12 +929,44 @@ body {
         padding: 1rem;
     }
 
+    /* Mobile nav menu: off-canvas panel */
     .nav-menu {
-        display: none;
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        display: flex;
+        /* ensure it's visible when sliding in */
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(20px);
+        padding: 2rem 0;
+        z-index: 1001;
+        /* above navbar */
+    }
+
+    .nav-menu.active {
+        left: 0;
     }
 
     .hamburger {
         display: flex;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 
     .hero-container {
