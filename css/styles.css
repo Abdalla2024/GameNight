@@ -131,6 +131,7 @@ body {
 .btn-app-store {
     display: inline-block;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .btn-app-store:hover {
@@ -150,10 +151,15 @@ body {
     box-shadow: none;
     overflow: visible;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .btn.btn-app-store::before {
     display: none;
+}
+
+.btn.btn-app-store:hover {
+    transform: translateY(-1px) scale(1.03);
 }
 
 /* Navigation */
@@ -732,6 +738,9 @@ body {
 
 .download-left {
     text-align: left;
+    position: relative;
+    z-index: 5;
+    /* ensure above any overlays */
 }
 
 .download-left h2 {
